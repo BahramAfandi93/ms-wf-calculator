@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  waterflowcalc_mysql:
+    image: mysql:8
+    restart: on-failure
+    ports:
+      - "4410:3306"
+    volumes:
+      - waterflowcalc_dataBase:/var/lib/waterflowcalc_db
+    networks:
+      - waterflowcalc_network
+    environment:
+      MYSQL_DATABASE: 'waterflowcalc_db'
+      MYSQL_USER: 'bahramafandi'
+      MYSQL_PASSWORD: '123456'
+      MYSQL_ROOT_PASSWORD: '123456'
+
+  user_mysql:
+    image: mysql:8
+    restart: on-failure
+    ports:
+      - "4411:3306"
+    volumes:
+      - user_dataBase:/var/lib/waterflowcalc_db
+    networks:
+      - user_network
+    environment:
+      MYSQL_DATABASE: 'user_db'
+      MYSQL_USER: 'bahramafandi'
+      MYSQL_PASSWORD: '123456'
+      MYSQL_ROOT_PASSWORD: '123456'
+
+volumes:
+  waterflowcalc_dataBase:
+  user_dataBase:
+
+networks:
+  waterflowcalc_network:
+  user_network:
