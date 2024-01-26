@@ -1,6 +1,6 @@
 package com.construe.waterflowcalc.dto;
 
-import com.construe.waterflowcalc.entity.StructureShape;
+import com.construe.waterflowcalc.entity.Roughness;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -21,7 +21,7 @@ public class PipeResponseDto {
     Double slope;
 
     @Enumerated(EnumType.STRING)
-    StructureShape shape;
+    Roughness shape;
     Double structureDiameter;
     Double structureWidth;
     Double structureHeight;

@@ -13,7 +13,10 @@ import static org.mapstruct.ReportingPolicy.IGNORE;
 @Mapper(unmappedTargetPolicy = IGNORE, componentModel = "Spring")
 public interface PipeMapper {
     PipeResponseDto pipeToPipeResponseDto(Pipe pipe);
+
     List<PipeResponseDto> pipeListToPipeResponseDtoList(List<Pipe> pipeList);
+
     List<Pipe> pipeRequestDtoListToPipeList(List<PipeRequestDto> pipeRequestDtoList);
+
     Pipe pipeRequestDtoToPipe(PipeRequestDto pipeRequestDto);
 }

@@ -1,12 +1,5 @@
 package com.construe.waterflowcalc.mapper;
 
-import com.construe.waterflowcalc.dto.UserRequestDto;
-import com.construe.waterflowcalc.dto.UserRequestDto.UserRequestDtoBuilder;
-import com.construe.waterflowcalc.dto.UserResponseDto;
-import com.construe.waterflowcalc.dto.UserResponseDto.UserResponseDtoBuilder;
-import com.construe.waterflowcalc.entity.Pipe;
-import com.construe.waterflowcalc.entity.User;
-import com.construe.waterflowcalc.entity.User.UserBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;

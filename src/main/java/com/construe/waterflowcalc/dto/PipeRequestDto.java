@@ -1,7 +1,11 @@
 package com.construe.waterflowcalc.dto;
 
-import com.construe.waterflowcalc.entity.StructureShape;
-import lombok.*;
+import com.construe.waterflowcalc.entity.Roughness;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @Data
@@ -19,7 +23,7 @@ public class PipeRequestDto {
     Integer calculationArea;
     Double slope;
 
-    StructureShape shape;
+    Roughness shape;
     Double structureDiameter;
     Double structureWidth;
     Double structureHeight;

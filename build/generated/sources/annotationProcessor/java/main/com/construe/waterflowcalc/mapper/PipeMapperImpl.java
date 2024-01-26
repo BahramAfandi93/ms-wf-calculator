@@ -3,8 +3,7 @@ package com.construe.waterflowcalc.mapper;
 import com.construe.waterflowcalc.dto.PipeRequestDto;
 import com.construe.waterflowcalc.dto.PipeResponseDto;
 import com.construe.waterflowcalc.dto.PipeResponseDto.PipeResponseDtoBuilder;
-import com.construe.waterflowcalc.entity.Pipe;
-import com.construe.waterflowcalc.entity.Pipe.PipeBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;
