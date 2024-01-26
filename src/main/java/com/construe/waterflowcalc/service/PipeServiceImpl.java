@@ -42,29 +42,6 @@ public class PipeServiceImpl implements PipeService {
         return pipeMapper.pipeToPipeResponse(pipe);
     }
 
-    @Override
-    public List<PipeResponse> addPipeList(List<PipeRequest> pipeRequestDtoList) {
-        log.info("Adding new pipe list");
-
-        return null;
-    }
-
-    @Override
-    public PipeResponse findById(Long id) {
-        log.info("Finding by id");
-
-        return pipeMapper.pipeToPipeResponse(pipeRepository.findById(id).get());
-    }
-
-    @Override
-    public PipeResponse findByLocationAndProjectNameAndChainage(
-    String location, String projectName, String chainage) {
-        log.info("Finding by location and project name and chainage");
-
-        return pipeMapper.pipeToPipeResponse(
-                pipeRepository.findByLocationAndProjectNameAndChainage(location, projectName, chainage).get());
-    }
-
     public static double getCentralAngle(double diameter, int percent) {
         log.info("Getting central angle");
 

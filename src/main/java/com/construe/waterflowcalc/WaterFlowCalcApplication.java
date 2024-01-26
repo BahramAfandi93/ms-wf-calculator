@@ -13,10 +13,5 @@ public class WaterFlowCalcApplication implements CommandLineRunner {
     }
 
     public void run(String... args) throws Exception {
-//        double dimater = 2.5;
-//        double slope = 2.5;
-//        int percent = 70;
-//
-//        System.out.println("FLOW AREA = " + PipeServiceImpl.getFlowArea(dimater, percent));
     }
 }
