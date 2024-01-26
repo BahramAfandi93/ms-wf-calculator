@@ -3,7 +3,7 @@ package com.construe.waterflowcalc.service;
 import com.construe.waterflowcalc.dto.UserRequestDto;
 import com.construe.waterflowcalc.dto.UserResponseDto;
 import com.construe.waterflowcalc.mapper.UserMapper;
-import com.construe.waterflowcalc.model.User;
+import com.construe.waterflowcalc.entity.User;
 import com.construe.waterflowcalc.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

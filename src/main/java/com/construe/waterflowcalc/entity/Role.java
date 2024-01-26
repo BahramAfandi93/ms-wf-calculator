@@ -1,4 +1,4 @@
-package com.construe.waterflowcalc.model;
+package com.construe.waterflowcalc.entity;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

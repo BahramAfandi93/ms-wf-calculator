@@ -1,6 +1,6 @@
 package com.construe.waterflowcalc.repository;
 
-import com.construe.waterflowcalc.model.Pipe;
+import com.construe.waterflowcalc.entity.Pipe;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,7 +1,7 @@
 package com.construe.waterflowcalc.service;
 
-import com.construe.waterflowcalc.model.Role;
-import com.construe.waterflowcalc.model.User;
+import com.construe.waterflowcalc.entity.Role;
+import com.construe.waterflowcalc.entity.User;
 import com.construe.waterflowcalc.repository.RoleRepository;
 import com.construe.waterflowcalc.repository.UserRepository;
 import lombok.Data;
@@ -29,6 +29,5 @@ public class RoleServiceImpl implements RoleService {
         log.info("Adding role to user");
         User user = userRepository.findByUsername(username);
         Role role = roleRepository.findByRole(userRole).get();
-        user.getRole().add(role);
     }
 }

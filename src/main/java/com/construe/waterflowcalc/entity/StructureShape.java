@@ -1,4 +1,4 @@
-package com.construe.waterflowcalc.model;
+package com.construe.waterflowcalc.entity;
 
 public enum StructureShape {
     ROUND_CULVERT,

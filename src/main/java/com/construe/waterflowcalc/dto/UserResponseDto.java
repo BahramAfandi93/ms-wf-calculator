@@ -1,7 +1,6 @@
 package com.construe.waterflowcalc.dto;
 
-import com.construe.waterflowcalc.model.Pipe;
-import com.construe.waterflowcalc.model.User;
+import com.construe.waterflowcalc.entity.Pipe;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 

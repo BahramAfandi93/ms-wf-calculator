@@ -4,8 +4,8 @@ import com.construe.waterflowcalc.dto.PipeRequestDto;
 import com.construe.waterflowcalc.dto.PipeResponseDto;
 import com.construe.waterflowcalc.mapper.PipeMapper;
 import com.construe.waterflowcalc.mapper.UserMapper;
-import com.construe.waterflowcalc.model.Pipe;
-import com.construe.waterflowcalc.model.User;
+import com.construe.waterflowcalc.entity.Pipe;
+import com.construe.waterflowcalc.entity.User;
 import com.construe.waterflowcalc.repository.PipeRepository;
 import com.construe.waterflowcalc.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Slf4j

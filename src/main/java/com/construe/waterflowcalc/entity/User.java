@@ -1,4 +1,4 @@
-package com.construe.waterflowcalc.model;
+package com.construe.waterflowcalc.entity;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -7,7 +7,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -44,8 +43,4 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     List<Pipe> pipes;
-    @ManyToMany(fetch = FetchType.EAGER)
-    List<Role> role = new ArrayList<>();
-
-
 }

@@ -2,7 +2,7 @@ package com.construe.waterflowcalc.service;
 
 import com.construe.waterflowcalc.dto.UserRequestDto;
 import com.construe.waterflowcalc.dto.UserResponseDto;
-import com.construe.waterflowcalc.model.User;
+import com.construe.waterflowcalc.entity.User;
 
 import java.util.List;
 

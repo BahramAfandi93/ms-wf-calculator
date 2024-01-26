@@ -1,6 +1,6 @@
 package com.construe.waterflowcalc.dto;
 
-import com.construe.waterflowcalc.model.StructureShape;
+import com.construe.waterflowcalc.entity.StructureShape;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 

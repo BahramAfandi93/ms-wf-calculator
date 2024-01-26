@@ -1,6 +1,6 @@
 package com.construe.waterflowcalc.service;
 
-import com.construe.waterflowcalc.model.Role;
+import com.construe.waterflowcalc.entity.Role;
 import org.springframework.stereotype.Service;
 
 @Service
