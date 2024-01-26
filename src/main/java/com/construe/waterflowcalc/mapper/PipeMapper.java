@@ -1,8 +1,7 @@
 package com.construe.waterflowcalc.mapper;
 
 
-import com.construe.waterflowcalc.dto.PipeRequestDto;
-import com.construe.waterflowcalc.dto.PipeResponseDto;
+import com.construe.waterflowcalc.dto.PipeRequest;
 import com.construe.waterflowcalc.entity.Pipe;
 import org.mapstruct.Mapper;
 
@@ -16,7 +15,7 @@ public interface PipeMapper {
 
     List<PipeResponseDto> pipeListToPipeResponseDtoList(List<Pipe> pipeList);
 
-    List<Pipe> pipeRequestDtoListToPipeList(List<PipeRequestDto> pipeRequestDtoList);
+    List<Pipe> pipeRequestDtoListToPipeList(List<PipeRequest> pipeRequestDtoList);
 
-    Pipe pipeRequestDtoToPipe(PipeRequestDto pipeRequestDto);
+    Pipe pipeRequestDtoToPipe(PipeRequest pipeRequestDto);
 }

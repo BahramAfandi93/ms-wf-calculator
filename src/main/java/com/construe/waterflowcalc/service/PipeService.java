@@ -1,14 +1,14 @@
 package com.construe.waterflowcalc.service;
 
-import com.construe.waterflowcalc.dto.PipeRequestDto;
-import com.construe.waterflowcalc.dto.PipeResponseDto;
+import com.construe.waterflowcalc.dto.PipeRequest;
+import com.construe.waterflowcalc.dto.PipeResponse;
 
 import java.util.List;
 
 public interface PipeService {
-    PipeResponseDto addPipe(Long userId, PipeRequestDto pipeRequestDto);
-    List<PipeResponseDto> addPipeList(List<PipeRequestDto> pipeRequestDtoList);
-    PipeResponseDto findById(Long id);
+    PipeResponse addPipe(Long userId, PipeRequest pipeRequest);
+    List<PipeResponse> addPipeList(List<PipeRequest> pipeRequestDtoList);
+    PipeResponse findById(Long id);
 
-    PipeResponseDto findByLocationAndProjectNameAndChainage(String location, String projectName, String chainage);
+    PipeResponse findByLocationAndProjectNameAndChainage(String location, String projectName, String chainage);
 }
