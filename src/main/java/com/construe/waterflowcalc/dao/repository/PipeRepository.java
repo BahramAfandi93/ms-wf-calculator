@@ -1,4 +1,4 @@
-package com.construe.waterflowcalc.repository;
+package com.construe.waterflowcalc.dao.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

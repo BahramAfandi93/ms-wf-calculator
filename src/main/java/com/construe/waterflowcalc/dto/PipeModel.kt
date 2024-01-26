@@ -1,10 +1,9 @@
 package com.construe.waterflowcalc.dto
 
-import com.construe.waterflowcalc.entity.Roughness
+import com.construe.waterflowcalc.dao.entity.Roughness
 
 data class PipeRequest(
-    var location: String? = null,
-    var projectName: String? = null,
+    var project: Project,
     var chainage: String? = null,
     var material: String? = null,
     var flowHeight: Int? = null,
@@ -41,4 +40,9 @@ data class PipeResponse(
     var flowRate: Double? = null,
     var requiredFlowRate: Double? = null,
     var result: String? = null
+)
+
+data class Project(
+    var location: String? = null,
+    var projectName: String? = null,
 )

@@ -1,4 +1,4 @@
-package com.construe.waterflowcalc.entity
+package com.construe.waterflowcalc.dao.entity
 
 enum class StructureShape {
     CIRCLE_CULVERT,
@@ -29,3 +29,7 @@ enum class Roughness(val roughness: Double) {
     PLASTIC(0.009)
 }
 
+enum class Result{
+    FLOW_IS_SATISFIED,
+    FLOW_FAILED
+}

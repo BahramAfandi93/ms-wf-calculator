@@ -2,14 +2,12 @@ package com.construe.waterflowcalc.service;
 
 import com.construe.waterflowcalc.dto.PipeRequest;
 import com.construe.waterflowcalc.dto.PipeResponse;
-import com.construe.waterflowcalc.entity.Pipe;
+import com.construe.waterflowcalc.dao.entity.Pipe;
 import com.construe.waterflowcalc.mapper.PipeMapper;
-import com.construe.waterflowcalc.repository.PipeRepository;
+import com.construe.waterflowcalc.dao.repository.PipeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @Slf4j
@@ -21,7 +19,8 @@ public class PipeServiceImpl implements PipeService {
 
     @Override
     public PipeResponse addPipe(Long userId, PipeRequest pipeRequestDto) {
-        log.info("Adding new pipe");
+        log.info("Adding new pipe -> {}", pipeRequestDto);
+
 
         Pipe pipe = pipeMapper.pipeRequestToPipe(pipeRequestDto);
 
@@ -40,29 +39,6 @@ public class PipeServiceImpl implements PipeService {
             userService.updateUser(userId, userMapper.userToUserRequest(user));
         }
         return pipeMapper.pipeToPipeResponse(pipe);
-    }
-
-    @Override
-    public List<PipeResponse> addPipeList(List<PipeRequest> pipeRequestDtoList) {
-        log.info("Adding new pipe list");
-
-        return null;
-    }
-
-    @Override
-    public PipeResponse findById(Long id) {
-        log.info("Finding by id");
-
-        return pipeMapper.pipeToPipeResponse(pipeRepository.findById(id).get());
-    }
-
-    @Override
-    public PipeResponse findByLocationAndProjectNameAndChainage(
-    String location, String projectName, String chainage) {
-        log.info("Finding by location and project name and chainage");
-
-        return pipeMapper.pipeToPipeResponse(
-                pipeRepository.findByLocationAndProjectNameAndChainage(location, projectName, chainage).get());
     }
 
     public static double getCentralAngle(double diameter, int percent) {
