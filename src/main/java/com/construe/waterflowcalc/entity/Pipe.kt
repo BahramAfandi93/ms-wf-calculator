@@ -25,7 +25,7 @@ data class Pipe(
     var slope: Double? = null,
 
     @Enumerated(STRING)
-    var shape: Roughness? = null,
+    var shape: StructureShape? = null,
 
     var structureDiameter: Double? = null,
     var structureWidth: Double? = null,

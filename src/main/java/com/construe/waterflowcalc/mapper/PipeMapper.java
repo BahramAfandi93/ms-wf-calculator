@@ -2,6 +2,7 @@ package com.construe.waterflowcalc.mapper;
 
 
 import com.construe.waterflowcalc.dto.PipeRequest;
+import com.construe.waterflowcalc.dto.PipeResponse;
 import com.construe.waterflowcalc.entity.Pipe;
 import org.mapstruct.Mapper;
 
@@ -11,11 +12,11 @@ import static org.mapstruct.ReportingPolicy.IGNORE;
 
 @Mapper(unmappedTargetPolicy = IGNORE, componentModel = "Spring")
 public interface PipeMapper {
-    PipeResponseDto pipeToPipeResponseDto(Pipe pipe);
+    PipeResponse pipeToPipeResponse(Pipe pipe);
 
-    List<PipeResponseDto> pipeListToPipeResponseDtoList(List<Pipe> pipeList);
+    List<PipeResponse> pipeListToPipeResponseList(List<Pipe> pipeList);
 
-    List<Pipe> pipeRequestDtoListToPipeList(List<PipeRequest> pipeRequestDtoList);
+    List<Pipe> pipeRequestListToPipeList(List<PipeRequest> pipeRequestList);
 
-    Pipe pipeRequestDtoToPipe(PipeRequest pipeRequestDto);
+    Pipe pipeRequestToPipe(PipeRequest pipeRequestDto);
 }

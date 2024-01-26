@@ -1,8 +1,10 @@
 package com.construe.waterflowcalc.service;
 
+import com.construe.waterflowcalc.dto.PipeRequest;
+import com.construe.waterflowcalc.dto.PipeResponse;
+import com.construe.waterflowcalc.entity.Pipe;
 import com.construe.waterflowcalc.mapper.PipeMapper;
 import com.construe.waterflowcalc.repository.PipeRepository;
-import com.construe.waterflowcalc.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -14,18 +16,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PipeServiceImpl implements PipeService {
 
-    private final UserService userService;
-    private final UserMapper userMapper;
-    private final UserRepository userRepository;
     private final PipeRepository pipeRepository;
     private final PipeMapper pipeMapper;
 
     @Override
-    public PipeResponseDto addPipe(Long userId, PipeRequestDto pipeRequestDto) {
+    public PipeResponse addPipe(Long userId, PipeRequest pipeRequestDto) {
         log.info("Adding new pipe");
 
-        Pipe pipe = pipeMapper.pipeRequestDtoToPipe(pipeRequestDto);
-        User user = userService.findUserById(userId);
+        Pipe pipe = pipeMapper.pipeRequestToPipe(pipeRequestDto);
 
         String location = pipe.getLocation();
         String projectName = pipe.getProjectName();
@@ -37,33 +35,33 @@ public class PipeServiceImpl implements PipeService {
             pipe = pipeFieldSetter(pipe);
             pipe.setUser(user);
             pipeRepository.save(pipe);
-            user.getPipes().add(pipe);
+            user.getPipes().add(pipe bv);
             userRepository.save(user);
-            userService.updateUser(userId, userMapper.userToUserRequestDto(user));
+            userService.updateUser(userId, userMapper.userToUserRequest(user));
         }
-        return pipeMapper.pipeToPipeResponseDto(pipe);
+        return pipeMapper.pipeToPipeResponse(pipe);
     }
 
     @Override
-    public List<PipeResponseDto> addPipeList(List<PipeRequestDto> pipeRequestDtoList) {
+    public List<PipeResponse> addPipeList(List<PipeRequest> pipeRequestDtoList) {
         log.info("Adding new pipe list");
 
         return null;
     }
 
     @Override
-    public PipeResponseDto findById(Long id) {
+    public PipeResponse findById(Long id) {
         log.info("Finding by id");
 
-        return pipeMapper.pipeToPipeResponseDto(pipeRepository.findById(id).get());
+        return pipeMapper.pipeToPipeResponse(pipeRepository.findById(id).get());
     }
 
     @Override
-    public PipeResponseDto findByLocationAndProjectNameAndChainage(
+    public PipeResponse findByLocationAndProjectNameAndChainage(
     String location, String projectName, String chainage) {
         log.info("Finding by location and project name and chainage");
 
-        return pipeMapper.pipeToPipeResponseDto(
+        return pipeMapper.pipeToPipeResponse(
                 pipeRepository.findByLocationAndProjectNameAndChainage(location, projectName, chainage).get());
     }
 
